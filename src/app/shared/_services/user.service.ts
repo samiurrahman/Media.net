@@ -16,7 +16,7 @@ export class UserService {
         this.localStore('books', book);
     }
 
-    addFavourites(favourites: BooksModel.Booktype) {
+    addFavourites(favourites) {
         this.updateIsFav(favourites.id, true);
         this.localStore('favourites', favourites);
     }
