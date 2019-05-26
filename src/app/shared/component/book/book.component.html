@@ -1,0 +1,52 @@
+
+<input class="filter" type="text" placeholder="Search..." [(ngModel)]="searchText">
+
+<div class="book">
+
+  <div  class="card"  *ngFor="let book of addedbooks | FilterPipe : searchText">
+   
+    <div class="card--actions clearfix">
+      <ng-container *ngIf="type === 'books'">
+        <button (click)="addFavourites(book)" *ngIf="!book.isFav; else favourites">
+          <img src="assets/img/favourite.png" alt="favourite"> 
+          Add to Favourites
+        </button>
+        <ng-template #favourites>
+          <button (click)="removeFavourites(book.id)" >
+            <img src="assets/img/favAdded.png" alt="favourite"> 
+            Favourites
+          </button>
+        </ng-template>
+      </ng-container>
+
+      
+
+      <button  (click)="delete(book.id)" *ngIf="type === 'books'; else fav">
+        <img src="assets/img/delete.png" alt="delete">
+      </button>
+      
+      <ng-template #fav>
+        <button  (click)="removeFavourites(book.id)">
+          <img src="assets/img/delete.png" alt="delete">
+        </button>
+      </ng-template>
+    </div>
+
+    <div class="card--image">
+      <img src="assets/img/book_dummy.png" class="card-img-top" alt="{{ book?.bookName }}">
+    </div>
+    
+    <div class="card--body">
+      <h4 class="card--title"><b>{{ book?.bookName }}</b></h4> 
+      <p class="card--text">by {{ book?.auther }}</p> 
+      <p class="card--text">&#8377; {{ book?.bookPrice }}</p>
+      <!-- <a class="btn btn-primary" (click)="removeFavourites(book.id)">fav Remove</a> -->
+    </div>
+
+  </div>
+
+</div>
+
+
+
+

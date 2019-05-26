@@ -1,0 +1,58 @@
+@import '../../styles.scss';
+.addBook {
+    @include centerItem;
+    background-color: #fff;
+    padding: 4rem;
+    width: 35%;
+    box-shadow: 3px 0px 8px #fff;
+
+    .addBook__inputField {
+        margin-bottom: 2rem;
+
+        label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: .5rem;
+        }
+
+        input {
+            @include input;
+        }
+
+        .is-invalid {
+            border: .1rem solid red;
+        }
+
+    }
+
+    .addBook__submit {
+
+        button {
+            @include buttonReset;
+            border: 0px;
+            width: 100%;
+            padding: 1rem 1rem;
+            background-color: #00BEDA;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.6rem;
+        }
+
+    }
+
+    .addBook__error {
+        color: red;
+        font-size: 1rem;
+        margin-bottom: 1px;
+    }   
+    
+    h4 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    hr {
+        margin-bottom: 2.5rem;
+    }
+
+}

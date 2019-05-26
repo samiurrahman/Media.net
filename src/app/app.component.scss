@@ -1,0 +1,49 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    height: 100vh;
+    
+    .navigation {
+        background:#fff url('../assets/img/1907.png') no-repeat right bottom;
+        background-size: 100% 60%;
+        
+        .logo {
+            img {
+                margin: 1rem auto;
+                display: block;
+                width: 11rem;
+            }
+        }
+
+        nav {
+            margin-top: 15%;
+            
+            ul {
+                width: 50%;
+                margin: auto;
+
+                li {
+                    margin: 2rem 0rem;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+
+                    img {
+                        width: 2rem;
+                        vertical-align: middle;
+                        margin-right: .5rem; 
+                    }
+                }
+            }
+        } 
+
+        .active {
+            color: #00BEDA;
+        }
+    }
+
+    main {
+        background-color: #f8f8f8;
+        position: relative;
+        padding: 2rem;
+    }
+}
